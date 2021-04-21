@@ -1,3 +1,26 @@
-  For my final project I plan on recreating the game Geometry Dash. This game works by having a square jump to avoid and navigate a moving terrain to get to the end of the level. If the square is able to successfully avoid all obstacles in its path, it may progress to the next level, but on failure the square must return to the start of the level. Geometry dash is a game that I along with many other kids played constantly on their phone. With many of these iPhone games, it has always been a fascination of mine to understand how they work. I believe that attempting to recreate this game will give me a lot more insight into the math and physics involved in game development to create a proper user experience. I will be motivated to see this project to completion because of this. As for my background knowledge, I have experience working with cinder and simulating object movement through my work on the ideal gas mp. I will just need to research how to add user interaction and simulate more movement on a larger scale. 
-  I plan to use cinder to create the interface in which the user can play the game and control the movements of the square. Some important aspects of the game that I will need to recreate include the constant speed and movement of the square, the movement of map as new obstacles get constantly loaded in, the user interaction that lets the square jump to avoid the obstacles, the mechanics of the jumping, the end game functionality, and the win game functionality. These will be the basic requirements I will need to fulfill in order to recreate what the game does at a base level. 
-  My time line for this project has it so that I should get the basic requirements done in 3 weeks. By the end of week one I hope to have the movement of the square done which includes the constant forward movement on the map and the jumping mechanics. I should also have it so that the square is confined to the screen and the background moves around it. By week two I hope to have figured out how to load a map that moves and updates around the square, and this map should have obstacles that the square can jump and avoid. By week three I should have the end game functionality complete where either the square resets to the beginning or the user wins the game. If there is any leftover time, I can implement the option of selecting different shapes, having more maps, letting the user vary the speed, have a practice mode where the user does not go back to the start when they die, or have animation on the square when it hits an obstacle. 
+Checker game: 
+- This is a visual representation of the game checkers where the MVP will contain some of the basic functionality of the game. There will be 2 players and they take turns moving a piece from one board.
+
+Week 1 goals:
+  - Get structure for game laid out. 
+  - Write method headers and create necessary classes
+  - Create starting board
+  - Plan out code for movement
+
+Week 2 goals:
+
+  - Implement movement of pieces methods.
+  - Implement checks to determine if right pieces are being moved.
+  - Implement taking pieces
+  - Show visual representation of board.
+  - Implement game winning
+
+Week 3 goals:
+  - Show visual represntation of selecting, moving, and updating board.
+  - Show visual representation of taken pieces
+  - Show visual represntation of winning game or forfeit.
+
+Extra goals: 
+- Highlight on board places player can move.
+- Kinging pieces
+- Error messages when user tries to select an invalid piece or move to an invalid location.
