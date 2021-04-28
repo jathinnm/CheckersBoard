@@ -1,4 +1,0 @@
-/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game.dir
-/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir
