@@ -19,15 +19,17 @@ void CheckersApp::draw() {
   ci::gl::drawStringCentered(
       "Welcome to Checkers",
       glm::vec2(kWindowSize / 2, kMargin / 2), ci::Color("black"));
+  if (game_board_.GetPlayerTurn()) {
+    ci::gl::drawStringCentered(
+        "Red's Turn: ",
+        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("blue"));
+  }
   
-//  ci::gl::drawStringCentered(
-//      "Prediction: " + std::to_string(current_prediction_),
-//      glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("blue"));
   
 }
 
 void CheckersApp::mouseDown(ci::app::MouseEvent event) {
-  bool isPieceFound = false;
+  bool is_square_found = false;
   for (size_t row = 0; row <= kBoardSize; row++) {
     for (size_t col = 0; col <= kBoardSize; col++) {
       vec2 x_lim = game_board_.GetGameBoard()[row][col].GetXLim();
@@ -35,12 +37,12 @@ void CheckersApp::mouseDown(ci::app::MouseEvent event) {
       if (event.getPos().x > x_lim.x && event.getPos().x < x_lim.y) {
         if (event.getPos().y < y_lim.x && event.getPos().y > y_lim.y) {
           game_board_.SelectNextMove(game_board_.GetGameBoard()[row][col]);
-          isPieceFound = true;
+          is_square_found = true;
           break;
         }
       }
     }
-    if (isPieceFound) {
+    if (is_square_found) {
       break;
     }
   }
@@ -64,4 +66,4 @@ void CheckersApp::mouseDown(ci::app::MouseEvent event) {
 //  }
 //}
 }  // namespace visualizer
-}  // namespace naivebayes
+}  // namespace checkers
