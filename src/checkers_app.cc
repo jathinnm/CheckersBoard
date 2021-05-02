@@ -18,11 +18,15 @@ void CheckersApp::draw() {
   
   ci::gl::drawStringCentered(
       "Welcome to Checkers",
-      glm::vec2(kWindowSize / 2, kMargin / 2), ci::Color("black"));
+      glm::vec2(kWindowSize / 2, kMargin / 2), ci::Color("black"), ci::Font("Arial", 50.0f) );
   if (game_board_.GetPlayerTurn()) {
     ci::gl::drawStringCentered(
-        "Red's Turn: ",
-        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("blue"));
+        "Red's Turn",
+        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("Red"),  ci::Font("Arial", 50.0f));
+  } else {
+    ci::gl::drawStringCentered(
+        "White's Turn",
+        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("White"),  ci::Font("Arial", 50.0f));
   }
   
   
