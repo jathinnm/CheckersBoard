@@ -13,8 +13,7 @@ Sketchpad::Sketchpad(const vec2 &top_left_corner, size_t num_pixels_per_side,
 
     : top_left_corner_(top_left_corner),
       num_pixels_per_side_(num_pixels_per_side),
-      pixel_side_length_(sketchpad_size / num_pixels_per_side),
-      brush_radius_(brush_radius)
+      pixel_side_length_(sketchpad_size / num_pixels_per_side)
    {
   pixels_ = vector<vector<char>>(num_pixels_per_side_,
                                  vector<char>(num_pixels_per_side_, 0));
@@ -40,6 +39,7 @@ void Sketchpad::Draw(GameBoard& game_board) const {
       vec2 x_lim = {pixel_top_left.x, pixel_bottom_right.x};
       vec2 y_lim = {pixel_bottom_right.y, pixel_top_left.y};
       game_board.GetGameBoard()[row][col].SetSquareLimits(x_lim, y_lim);
+      
       // Draw Squares
       ci::Rectf pixel_bounding_box(pixel_top_left, pixel_bottom_right);
       ci::gl::drawSolidRect(pixel_bounding_box);
@@ -59,22 +59,6 @@ void Sketchpad::Draw(GameBoard& game_board) const {
           ci::gl::color(125, 125, 125);
           ci::gl::drawSolidCircle(midpoint, 20.0f);
         }
-      }
-    }
-  }
-}
-
-void Sketchpad::HandleBrush(const vec2 &brush_screen_coords) {
-  vec2 brush_sketchpad_coords =
-      (brush_screen_coords - top_left_corner_) / (float)pixel_side_length_;
-
-  for (size_t row = 0; row < num_pixels_per_side_; ++row) {
-    for (size_t col = 0; col < num_pixels_per_side_; ++col) {
-      vec2 pixel_center = {col + 0.5, row + 0.5};
-
-      if (glm::distance(brush_sketchpad_coords, pixel_center) <=
-          brush_radius_) {
-        pixels_[row][col] = 1;
       }
     }
   }

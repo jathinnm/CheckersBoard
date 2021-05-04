@@ -44,7 +44,6 @@ public:
    * @param brush_screen_coords the screen coordinates at which the brush is
    *           located
    */
-  void HandleBrush(const glm::vec2 &brush_screen_coords);
 
   /**
    * Set all of the sketchpad pixels to an unshaded state.
@@ -60,9 +59,7 @@ private:
 
   /** Number of screen pixels in the width/height of one sketchpad pixel */
   double pixel_side_length_;
-
-  double brush_radius_;
-
+  
   vector<vector<char>> pixels_;
 };
 
