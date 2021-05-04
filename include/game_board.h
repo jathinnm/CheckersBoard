@@ -26,6 +26,8 @@ public:
   bool GetPlayerTurn() const;
   
   bool GetIsPieceSelected() const;
+  
+  Square GetSelectedPiece() const;
 
 
 private:

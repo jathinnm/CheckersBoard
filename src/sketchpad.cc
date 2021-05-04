@@ -28,6 +28,14 @@ void Sketchpad::Draw(GameBoard& game_board) const {
       } else {
         ci::gl::color(ci::Color("white"));
       }
+      if (game_board.GetIsPieceSelected()) {
+        for (size_t i = 0; i < game_board.GetSelectedPiece().GetPiecePossibleMoves().size(); i++) {
+          if (game_board.GetGameBoard()[row][col].GetLocation() == game_board.GetSelectedPiece().GetPiecePossibleMoves()[i]) {
+            ci::gl::color(ci::Color("yellow"));
+          }
+        }
+        
+      }
 
       // Determine coordinates
       vec2 pixel_top_left = top_left_corner_ + vec2(col * pixel_side_length_,

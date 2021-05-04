@@ -267,3 +267,6 @@ Player GameBoard::GetPlayerTwo() const { return player_two_; }
 bool GameBoard::GetIsPieceSelected() const { return is_piece_selected_; }
 
 } // namespace checkers
+checkers::Square checkers::GameBoard::GetSelectedPiece() const {
+  return selected_piece_;
+}

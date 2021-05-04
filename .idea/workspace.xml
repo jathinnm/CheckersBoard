@@ -12,9 +12,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58393c26-699d-4695-8c38-3dbcf6cff4eb" name="Default Changelist" comment="Implement able to take a piece in both directions">
-      <change beforePath="$PROJECT_DIR$/include/checker_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/checker_app.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/checkers_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers_app.cc" afterDir="false" />
+    <list default="true" id="58393c26-699d-4695-8c38-3dbcf6cff4eb" name="Default Changelist" comment="Fix double click bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/apps/cinder_app_main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/apps/cinder_app_main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/checkers_app.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/checkers_app.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_board.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_board.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/sketchpad.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/sketchpad.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug/checkers-game/checkers-game.app/Contents/MacOS/checkers-game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug/checkers-game/checkers-game.app/Contents/MacOS/checkers-game" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/game_board.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/game_board.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_board.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_board.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sketchpad.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/sketchpad.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +197,7 @@
       <workItem from="1619931993636" duration="11150000" />
       <workItem from="1620093688706" duration="8915000" />
       <workItem from="1620107338133" duration="4900000" />
-      <workItem from="1620112518812" duration="427000" />
+      <workItem from="1620112518812" duration="1557000" />
     </task>
     <task id="LOCAL-00001" summary="Parse training data. Calulate prior">
       <created>1617650730204</created>
@@ -330,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620097890361</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fix double click bug">
+      <created>1620112975887</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1620112975887</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +384,8 @@
     <MESSAGE value="Handle diagonal movement on cinder" />
     <MESSAGE value="Implement movement of white pieces and display turn" />
     <MESSAGE value="Implement able to take a piece in both directions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement able to take a piece in both directions" />
+    <MESSAGE value="Fix double click bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix double click bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -377,11 +394,6 @@
           <url>file://$PROJECT_DIR$/src/game_board.cc</url>
           <line>83</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/game_board.cc</url>
-          <line>120</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
