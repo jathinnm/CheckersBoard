@@ -8,7 +8,7 @@
 namespace checkers {
 
 namespace visualizer {
-
+using glm::vec2;
 class CheckersApp : public ci::app::App {
   
 public:
@@ -17,12 +17,10 @@ public:
   void draw() override;
   void mouseDown(ci::app::MouseEvent event) override;
 
-//  void mouseDrag(ci::app::MouseEvent event) override;
-//  void keyDown(ci::app::KeyEvent event) override;
-
   const double kWindowSize = 1000;
-  const double kMargin = 100;
+  const double kMargin = 150;
   const size_t kBoardSize = 8;
+  const size_t kHeaderHeight = 100;
 
 private:
   Sketchpad sketchpad_;

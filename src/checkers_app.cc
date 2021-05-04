@@ -16,9 +16,31 @@ void CheckersApp::draw() {
   
   sketchpad_.Draw(game_board_);
   
+  ci::gl::color( 0, 0, 0 ); 
+  ci::gl::drawSolidRect( ci::Rectf( 0,
+                            0,
+                            kWindowSize,
+                            kHeaderHeight) );
   ci::gl::drawStringCentered(
       "Welcome to Checkers",
-      glm::vec2(kWindowSize / 2, kMargin / 2), ci::Color("black"), ci::Font("Arial", 50.0f) );
+      glm::vec2(kWindowSize / 2, kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
+  ci::gl::drawStringCentered(
+      "P1 Score:",
+      glm::vec2(kWindowSize - (kWindowSize - 100) , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
+  
+  ci::gl::drawStringCentered(
+      std::to_string(game_board_.GetPlayerOne().GetCollectedPieces().size()),
+      glm::vec2(kWindowSize - (kWindowSize - 210) , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) 
+  );
+  
+  ci::gl::drawStringCentered(
+      "P2 Score:",
+      glm::vec2(kWindowSize / 1.15, kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
+  
+  ci::gl::drawStringCentered(
+      std::to_string(game_board_.GetPlayerTwo().GetCollectedPieces().size()),
+      glm::vec2(kWindowSize - 20 , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f)
+  );
   if (game_board_.GetPlayerTurn()) {
     ci::gl::drawStringCentered(
         "Red's Turn",
@@ -51,23 +73,6 @@ void CheckersApp::mouseDown(ci::app::MouseEvent event) {
     }
   }
 }
-
-//
-//void CheckersApp::mouseDrag(ci::app::MouseEvent event) {
-//  sketchpad_.HandleBrush(event.getPos());
-//}
-
-//void CheckersApp::keyDown(ci::app::KeyEvent event) {
-//  switch (event.getCode()) {
-//  case ci::app::KeyEvent::KEY_RETURN:
-//    image.SetPixels(sketchpad_.GetPixels());
-//    current_prediction_ = classifier.ClassifyImage(trained_model_, image);
-//    break;
-//
-//  case ci::app::KeyEvent::KEY_BACKSPACE:
-//    sketchpad_.Clear();
-//    break;
-//  }
 //}
 }  // namespace visualizer
 }  // namespace checkers
