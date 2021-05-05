@@ -1,10 +1,11 @@
 #include <game_board.h>
 
-// TODO: Change the name space to checkers
 namespace checkers {
+
 GameBoard::GameBoard() {
   is_player_one_turn_ = true;
   is_piece_selected_ = false;
+  can_jump_again_ = false;
   player_one_.SetIsPlayerOne(true);
   player_two_.SetIsPlayerOne(false);
   Square square;
@@ -72,9 +73,17 @@ void checkers::GameBoard::SelectNextMove(Square &square) {
         selected_piece_ = square;
         is_piece_selected_ = true;
         if (selected_piece_.GetPieceIsRedColor()) {
+          if (selected_piece_.GetGamePiece().GetIsPieceKing()) {
+            UpdateWhiteDiagPos(square);
+            UpdateWhiteJumpPos(square);
+          }
           UpdateRedDiagonalPos(square);
           UpdateRedJumpPos(square);
         } else {
+          if (selected_piece_.GetGamePiece().GetIsPieceKing()) {
+            UpdateRedDiagonalPos(square);
+            UpdateRedJumpPos(square);
+          }
           UpdateWhiteDiagPos(square);
           UpdateWhiteJumpPos(square);
         }
@@ -86,7 +95,6 @@ void checkers::GameBoard::SelectNextMove(Square &square) {
       if (square.GetLocation() == selected_piece_.GetPiecePossibleMoves()[i]) {
         std::cout << "idk bro";
         MoveToSquare(square);
-        //selected_piece_ . GetGamePiece().ClearPossibleMoves();
         break;
       }
     }
@@ -105,6 +113,9 @@ void checkers::GameBoard::MoveToSquare(Square &square) {
   selected_piece_.SetLocation(square.GetLocation().x, square.GetLocation().y);
   squares_[square.GetLocation().x][square.GetLocation().y] = selected_piece_;
   squares_[square.GetLocation().x][square.GetLocation().y].ClearPossibleMoves();
+  
+  UpdateKingPiece(square);
+  
   //Switch booleans
   is_piece_selected_ = false;
   is_player_one_turn_ = !is_player_one_turn_;
@@ -254,6 +265,19 @@ void GameBoard::TakePiece(Square &square, vec2 &increment) {
     player_two_.UpdateCollectedPieces(squares_[square.GetLocation().x + increment.x][square.GetLocation().y + increment.y].GetGamePiece());
   }
   squares_[square.GetLocation().x + increment.x][square.GetLocation().y + increment.y] = blank_square;
+  selected_piece_.ToggleCanJumpAgain();
+}
+
+void checkers::GameBoard::UpdateKingPiece(Square &square) {
+  if (is_player_one_turn_) {
+    if (square.GetLocation().x == kBoardSize - 1) {
+      squares_[square.GetLocation().x][square.GetLocation().y].SetIsPieceKing();
+    }
+  } else {
+    if (square.GetLocation().x == 0) {
+      squares_[square.GetLocation().x][square.GetLocation().y].SetIsPieceKing();
+    }
+  }
 }
 
 vector<vector<Square>> &GameBoard::GetGameBoard() { return squares_; }
@@ -266,7 +290,9 @@ Player GameBoard::GetPlayerTwo() const { return player_two_; }
 
 bool GameBoard::GetIsPieceSelected() const { return is_piece_selected_; }
 
-} // namespace checkers
-checkers::Square checkers::GameBoard::GetSelectedPiece() const {
+Square GameBoard::GetSelectedPiece() const {
   return selected_piece_;
 }
+
+} // namespace checkers
+

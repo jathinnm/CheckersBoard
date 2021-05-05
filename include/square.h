@@ -24,6 +24,8 @@ public:
   void SetSquareLimits(vec2& set_x_lim, vec2& set_y_lim);
   void SetPieceLocation(vec2& location);
   void ClearPossibleMoves();
+  void SetIsPieceKing();
+  void ToggleCanJumpAgain();
 
 private:
   std::string color_;

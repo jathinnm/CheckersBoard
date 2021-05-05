@@ -67,6 +67,13 @@ void Sketchpad::Draw(GameBoard& game_board) const {
           ci::gl::color(125, 125, 125);
           ci::gl::drawSolidCircle(midpoint, 20.0f);
         }
+        if (game_board.GetGameBoard()[row][col].GetGamePiece().GetIsPieceKing() && game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
+          ci::gl::color(0, 0, 255);
+          ci::gl::drawSolidCircle(midpoint, 20.0f);
+        } else if (game_board.GetGameBoard()[row][col].GetGamePiece().GetIsPieceKing() && !game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
+          ci::gl::color(0, 255, 0);
+          ci::gl::drawSolidCircle(midpoint, 20.0f);
+        }
       }
     }
   }

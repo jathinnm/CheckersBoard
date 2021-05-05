@@ -37,6 +37,7 @@ private:
 //  const vec2 kRightDownMove = {1, -1};
 //  const vec2 kLeftDownMove = {-1, -1};
   vector<vector<Square>> squares_;
+  bool can_jump_again_;
   bool is_player_one_turn_;
   bool is_piece_selected_;
   Player player_one_;
@@ -47,8 +48,10 @@ private:
   void UpdateWhiteDiagPos(Square& square);
   void UpdateRedJumpPos(Square& square);
   void UpdateWhiteJumpPos(Square& square);
+  void UpdateWhiteDoubleJumpPos(Square& square);
   void ClearSquare(Square& square);
   void TakePiece(Square& square, vec2& increment);
-  void CheckTakePiece(Square&);
+  void CheckTakePiece(Square& square);
+  void UpdateKingPiece(Square& square);
 };
 } // namespace checkers

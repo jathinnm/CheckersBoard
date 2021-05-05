@@ -65,4 +65,4 @@ private:
 
 } // namespace visualizer
 
-} // namespace naivebayes
+} // namespace checkers
