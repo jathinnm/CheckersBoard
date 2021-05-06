@@ -2,7 +2,7 @@
 
 using checkers::visualizer::CheckersApp;
 
-void prepareSettings(CheckersApp::Settings* settings) {
+void prepareSettings(CheckersApp::Settings *settings) {
   settings->setResizable(false);
 }
 
