@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/apps/checkers_app_main.cc
+iostream
+-
+stdlib.h
+-
+
