@@ -7,51 +7,46 @@ namespace visualizer {
 CheckersApp::CheckersApp()
     : sketchpad_(glm::vec2(kMargin, kMargin), kBoardSize,
                  kWindowSize - 2 * kMargin) {
-  ci::app::setWindowSize((int) kWindowSize, (int) kWindowSize);
+  ci::app::setWindowSize((int)kWindowSize, (int)kWindowSize);
 }
 
 void CheckersApp::draw() {
-  ci::Color8u background_color(150, 75, 0);  // brown
+  ci::Color8u background_color(150, 75, 0); // brown
   ci::gl::clear(background_color);
-  
+
   sketchpad_.Draw(game_board_);
-  
-  ci::gl::color( 0, 0, 0 ); 
-  ci::gl::drawSolidRect( ci::Rectf( 0,
-                            0,
-                            kWindowSize,
-                            kHeaderHeight) );
+
+  ci::gl::color(0, 0, 0);
+  ci::gl::drawSolidRect(ci::Rectf(0, 0, kWindowSize, kHeaderHeight));
+  ci::gl::drawStringCentered("Welcome to Checkers",
+                             glm::vec2(kWindowSize / 2, kMargin / 2.5),
+                             ci::Color("white"), ci::Font("Arial", 40.0f));
   ci::gl::drawStringCentered(
-      "Welcome to Checkers",
-      glm::vec2(kWindowSize / 2, kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
-  ci::gl::drawStringCentered(
-      "P1 Score:",
-      glm::vec2(kWindowSize - (kWindowSize - 100) , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
-  
+      "P1 Score:", glm::vec2(kWindowSize - (kWindowSize - 100), kMargin / 2.5),
+      ci::Color("white"), ci::Font("Arial", 40.0f));
+
   ci::gl::drawStringCentered(
       std::to_string(game_board_.GetPlayerOne().GetCollectedPieces().size()),
-      glm::vec2(kWindowSize - (kWindowSize - 210) , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) 
-  );
-  
+      glm::vec2(kWindowSize - (kWindowSize - 210), kMargin / 2.5),
+      ci::Color("white"), ci::Font("Arial", 40.0f));
+
   ci::gl::drawStringCentered(
-      "P2 Score:",
-      glm::vec2(kWindowSize / 1.15, kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f) );
-  
+      "P2 Score:", glm::vec2(kWindowSize / 1.15, kMargin / 2.5),
+      ci::Color("white"), ci::Font("Arial", 40.0f));
+
   ci::gl::drawStringCentered(
       std::to_string(game_board_.GetPlayerTwo().GetCollectedPieces().size()),
-      glm::vec2(kWindowSize - 20 , kMargin / 2.5), ci::Color("white"), ci::Font("Arial", 40.0f)
-  );
+      glm::vec2(kWindowSize - 20, kMargin / 2.5), ci::Color("white"),
+      ci::Font("Arial", 40.0f));
   if (game_board_.GetPlayerTurn()) {
     ci::gl::drawStringCentered(
-        "Red's Turn",
-        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("Red"),  ci::Font("Arial", 50.0f));
+        "Red's Turn", glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
+        ci::Color("Red"), ci::Font("Arial", 50.0f));
   } else {
     ci::gl::drawStringCentered(
-        "White's Turn",
-        glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2), ci::Color("White"),  ci::Font("Arial", 50.0f));
+        "White's Turn", glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
+        ci::Color("White"), ci::Font("Arial", 50.0f));
   }
-  
-  
 }
 
 void CheckersApp::mouseDown(ci::app::MouseEvent event) {
@@ -74,5 +69,5 @@ void CheckersApp::mouseDown(ci::app::MouseEvent event) {
   }
 }
 //}
-}  // namespace visualizer
-}  // namespace checkers
+} // namespace visualizer
+} // namespace checkers

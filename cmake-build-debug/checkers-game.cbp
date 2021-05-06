@@ -87,6 +87,50 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="checkers-app">
+				<Option output="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/checkers-app" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkers-app"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="checkers-app/fast">
+				<Option output="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/checkers-app" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 checkers-app/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="checkers-game-test">
 				<Option output="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug"/>
@@ -140,6 +184,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/apps/checkers_app_main.cc">
+			<Option target="checkers-app"/>
+		</Unit>
 		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/apps/cinder_app_main.cc">
 			<Option target="checkers-game"/>
 		</Unit>
@@ -148,6 +195,10 @@
 			<Option target="checkers-game-test"/>
 		</Unit>
 		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_board.cc">
+			<Option target="checkers-game"/>
+			<Option target="checkers-game-test"/>
+		</Unit>
+		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_engine.cc">
 			<Option target="checkers-game"/>
 			<Option target="checkers-game-test"/>
 		</Unit>
@@ -167,7 +218,7 @@
 			<Option target="checkers-game"/>
 			<Option target="checkers-game-test"/>
 		</Unit>
-		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_main.cc">
+		<Unit filename="/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_game_board.cc">
 			<Option target="checkers-game-test"/>
 		</Unit>
 		<Unit filename="/Users/jathinnama/Documents/Cinder/samples/data/CinderApp.icns">

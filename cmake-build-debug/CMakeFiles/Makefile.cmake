@@ -69,5 +69,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/checkers-game.dir/DependInfo.cmake"
+  "CMakeFiles/checkers-app.dir/DependInfo.cmake"
   "CMakeFiles/checkers-game-test.dir/DependInfo.cmake"
   )

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="checkers-game" targetName="checkers-app" />
       <config projectName="checkers-game" targetName="checkers-game" />
       <config projectName="checkers-game" targetName="checkers-game-test" />
     </generated>
@@ -12,18 +13,52 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58393c26-699d-4695-8c38-3dbcf6cff4eb" name="Default Changelist" comment="Highlight possible moves">
+    <list default="true" id="58393c26-699d-4695-8c38-3dbcf6cff4eb" name="Default Changelist" comment="Add functionality to king piece">
+      <change afterPath="$PROJECT_DIR$/apps/checkers_app_main.cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/game_engine.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game_engine.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game-test.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/apps/cinder_app_main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/apps/cinder_app_main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/checkers_app.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/checkers_app.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_board.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_board.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_piece.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/game_piece.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/player.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/player.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/sketchpad.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/sketchpad.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/square.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/checkers-game.dir/src/square.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Debug/checkers-game/checkers-game.app/Contents/MacOS/checkers-game" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Debug/checkers-game/checkers-game.app/Contents/MacOS/checkers-game" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/checkers-game.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/checkers-game.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/checker_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/checker_app.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/game_board.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/game_board.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/game_piece.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/game_piece.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/player.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/sketchpad.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/sketchpad.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/square.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/square.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/checkers_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/checkers_app.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game_board.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_board.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game_piece.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_piece.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sketchpad.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/sketchpad.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/square.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/square.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_game_board.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,38 +110,43 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.checkers-game">
-    <configuration name="Test calculating likelihoods 2X2" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="naive-bayes-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="naive-bayes-test" TEST_METHOD="Test calculating likelihoods 2X2" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake Application.checkers-game-test">
+    <configuration name="Test red piece can jump a piece" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-game-test" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-game-test" TEST_METHOD="Test red piece can jump a piece" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test calculating priors 2X2" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="naive-bayes-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="naive-bayes-test" TEST_METHOD="Test calculating priors 2X2" TEST_MODE="SUITE_TEST">
+    <configuration name="Test red piece cannot move on edges" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-game-test" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-game-test" TEST_METHOD="Test red piece cannot move on edges" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test classifier" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="naive-bayes-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="naive-bayes-test" TEST_METHOD="Test classifier" TEST_MODE="SUITE_TEST">
+    <configuration name="Test red piece movement diagonally" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-game-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-game-test" TEST_METHOD="Test red piece movement diagonally" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test data saving and loading 2X2" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="naive-bayes-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="naive-bayes-test" TEST_METHOD="Test data saving and loading 2X2" TEST_MODE="SUITE_TEST">
+    <configuration name="Test white piece can jump a piece" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-game-test" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-game-test" TEST_METHOD="Test white piece can jump a piece" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test extraction operator creating images" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="naive-bayes-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="naive-bayes-test" TEST_METHOD="Test extraction operator creating images" TEST_MODE="SUITE_TEST">
+    <configuration name="Test white piece movement diagonally" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-game-test" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-game-test" TEST_METHOD="Test white piece movement diagonally" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="checkers-app" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="checkers-game" TARGET_NAME="checkers-app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="checkers-game" RUN_TARGET_NAME="checkers-app">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -132,22 +172,23 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Catch.Test calculating priors 2X2" />
-      <item itemvalue="Catch.Test data saving and loading 2X2" />
-      <item itemvalue="Catch.Test calculating likelihoods 2X2" />
-      <item itemvalue="Catch.Test extraction operator creating images" />
-      <item itemvalue="Catch.Test classifier" />
       <item itemvalue="CMake Application.train-model" />
+      <item itemvalue="CMake Application.checkers-app" />
       <item itemvalue="CMake Application.checkers-game" />
       <item itemvalue="CMake Application.checkers-game-test" />
+      <item itemvalue="Catch.Test red piece movement diagonally" />
+      <item itemvalue="Catch.Test white piece movement diagonally" />
+      <item itemvalue="Catch.Test red piece can jump a piece" />
+      <item itemvalue="Catch.Test white piece can jump a piece" />
+      <item itemvalue="Catch.Test red piece cannot move on edges" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Catch.Test extraction operator creating images" />
-        <item itemvalue="Catch.Test classifier" />
-        <item itemvalue="Catch.Test data saving and loading 2X2" />
-        <item itemvalue="Catch.Test calculating priors 2X2" />
-        <item itemvalue="Catch.Test calculating likelihoods 2X2" />
+        <item itemvalue="Catch.Test red piece cannot move on edges" />
+        <item itemvalue="Catch.Test white piece can jump a piece" />
+        <item itemvalue="Catch.Test red piece can jump a piece" />
+        <item itemvalue="Catch.Test white piece movement diagonally" />
+        <item itemvalue="Catch.Test red piece movement diagonally" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +239,7 @@
       <workItem from="1620093688706" duration="8915000" />
       <workItem from="1620107338133" duration="4900000" />
       <workItem from="1620112518812" duration="2823000" />
-      <workItem from="1620162320817" duration="8728000" />
+      <workItem from="1620162320817" duration="30977000" />
     </task>
     <task id="LOCAL-00001" summary="Parse training data. Calulate prior">
       <created>1617650730204</created>
@@ -354,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620114112424</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add functionality to king piece">
+      <created>1620188999060</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1620188999060</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +442,7 @@
     <MESSAGE value="Implement able to take a piece in both directions" />
     <MESSAGE value="Fix double click bug" />
     <MESSAGE value="Highlight possible moves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Highlight possible moves" />
+    <MESSAGE value="Add functionality to king piece" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functionality to king piece" />
   </component>
 </project>

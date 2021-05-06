@@ -12,9 +12,9 @@ public:
   void SetIsPlayerOne(bool set_is_player_one);
   void UpdateCollectedPieces(GamePiece game_piece);
   vector<GamePiece> GetCollectedPieces();
+
 private:
   vector<GamePiece> collected_pieces_;
   bool is_player_one_;
-  
 };
-}  // namespace checkers
+} // namespace checkers

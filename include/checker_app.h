@@ -1,5 +1,4 @@
 #pragma once
-
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
@@ -10,10 +9,10 @@ namespace checkers {
 namespace visualizer {
 using glm::vec2;
 class CheckersApp : public ci::app::App {
-  
+
 public:
   CheckersApp();
-  
+
   void draw() override;
   void mouseDown(ci::app::MouseEvent event) override;
 
@@ -26,7 +25,6 @@ private:
   Sketchpad sketchpad_;
   GameBoard game_board_;
 };
-
 } // namespace visualizer
 
 } // namespace checkers

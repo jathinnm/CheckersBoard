@@ -8,18 +8,13 @@ using glm::vec2;
 using std::vector;
 
 Sketchpad::Sketchpad(const vec2 &top_left_corner, size_t num_pixels_per_side,
-                     double sketchpad_size,
-                     double brush_radius)
+                     double sketchpad_size, double brush_radius)
 
     : top_left_corner_(top_left_corner),
       num_pixels_per_side_(num_pixels_per_side),
-      pixel_side_length_(sketchpad_size / num_pixels_per_side)
-   {
-  pixels_ = vector<vector<char>>(num_pixels_per_side_,
-                                 vector<char>(num_pixels_per_side_, 0));
-}
+      pixel_side_length_(sketchpad_size / num_pixels_per_side) {}
 
-void Sketchpad::Draw(GameBoard& game_board) const {
+void Sketchpad::Draw(GameBoard &game_board) const {
   for (size_t row = 0; row < num_pixels_per_side_; ++row) {
     for (size_t col = 0; col < num_pixels_per_side_; ++col) {
       // Set Colors for squares
@@ -29,12 +24,14 @@ void Sketchpad::Draw(GameBoard& game_board) const {
         ci::gl::color(ci::Color("white"));
       }
       if (game_board.GetIsPieceSelected()) {
-        for (size_t i = 0; i < game_board.GetSelectedPiece().GetPiecePossibleMoves().size(); i++) {
-          if (game_board.GetGameBoard()[row][col].GetLocation() == game_board.GetSelectedPiece().GetPiecePossibleMoves()[i]) {
+        for (size_t i = 0;
+             i < game_board.GetSelectedPiece().GetPiecePossibleMoves().size();
+             i++) {
+          if (game_board.GetGameBoard()[row][col].GetLocation() ==
+              game_board.GetSelectedPiece().GetPiecePossibleMoves()[i]) {
             ci::gl::color(ci::Color("yellow"));
           }
         }
-        
       }
 
       // Determine coordinates
@@ -47,7 +44,7 @@ void Sketchpad::Draw(GameBoard& game_board) const {
       vec2 x_lim = {pixel_top_left.x, pixel_bottom_right.x};
       vec2 y_lim = {pixel_bottom_right.y, pixel_top_left.y};
       game_board.GetGameBoard()[row][col].SetSquareLimits(x_lim, y_lim);
-      
+
       // Draw Squares
       ci::Rectf pixel_bounding_box(pixel_top_left, pixel_bottom_right);
       ci::gl::drawSolidRect(pixel_bounding_box);
@@ -67,10 +64,16 @@ void Sketchpad::Draw(GameBoard& game_board) const {
           ci::gl::color(125, 125, 125);
           ci::gl::drawSolidCircle(midpoint, 20.0f);
         }
-        if (game_board.GetGameBoard()[row][col].GetGamePiece().GetIsPieceKing() && game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
+        if (game_board.GetGameBoard()[row][col]
+                .GetGamePiece()
+                .GetIsPieceKing() &&
+            game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
           ci::gl::color(0, 0, 255);
           ci::gl::drawSolidCircle(midpoint, 20.0f);
-        } else if (game_board.GetGameBoard()[row][col].GetGamePiece().GetIsPieceKing() && !game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
+        } else if (game_board.GetGameBoard()[row][col]
+                       .GetGamePiece()
+                       .GetIsPieceKing() &&
+                   !game_board.GetGameBoard()[row][col].GetPieceIsRedColor()) {
           ci::gl::color(0, 255, 0);
           ci::gl::drawSolidCircle(midpoint, 20.0f);
         }
@@ -78,14 +81,6 @@ void Sketchpad::Draw(GameBoard& game_board) const {
     }
   }
 }
-
-void Sketchpad::Clear() {
-  pixels_.clear();
-  pixels_ = vector<vector<char>>(num_pixels_per_side_,
-                                 vector<char>(num_pixels_per_side_, 0));
-}
-
-const vector<vector<char>> &Sketchpad::GetPixels() const { return pixels_; }
 
 } // namespace visualizer
 

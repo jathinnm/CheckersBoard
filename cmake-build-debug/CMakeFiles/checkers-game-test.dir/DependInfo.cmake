@@ -6,11 +6,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/checkers_app.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.o"
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_board.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/game_board.cc.o"
+  "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_engine.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o"
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_piece.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/game_piece.cc.o"
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/player.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/player.cc.o"
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/sketchpad.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/sketchpad.cc.o"
   "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/square.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/src/square.cc.o"
-  "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_main.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o"
+  "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_game_board.cc" "/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

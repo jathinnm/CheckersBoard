@@ -34,7 +34,7 @@ public:
   /**
    * Displays the current state of the sketchpad in the Cinder application.
    */
-  void Draw(GameBoard& game_board) const;
+  void Draw(GameBoard &game_board) const;
 
   /**
    * Shades in the sketchpad pixels whose centers are within brush_radius units
@@ -48,9 +48,6 @@ public:
   /**
    * Set all of the sketchpad pixels to an unshaded state.
    */
-  void Clear();
-
-  const vector<vector<char>> &GetPixels() const;
 
 private:
   glm::vec2 top_left_corner_;
@@ -59,8 +56,6 @@ private:
 
   /** Number of screen pixels in the width/height of one sketchpad pixel */
   double pixel_side_length_;
-  
-  vector<vector<char>> pixels_;
 };
 
 } // namespace visualizer

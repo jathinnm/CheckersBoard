@@ -81,18 +81,18 @@ Debug/checkers-game-test/checkers-game-test.app/Contents/Resources/CinderApp.icn
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Copying OS X content Debug/checkers-game-test/checkers-game-test.app/Contents/Resources/CinderApp.icns"
 	$(CMAKE_COMMAND) -E copy /Users/jathinnama/Documents/Cinder/samples/data/CinderApp.icns Debug/checkers-game-test/checkers-game-test.app/Contents/Resources/CinderApp.icns
 
-CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o: CMakeFiles/checkers-game-test.dir/flags.make
-CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o: ../tests/test_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o -c /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_main.cc
+CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o: CMakeFiles/checkers-game-test.dir/flags.make
+CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o: ../tests/test_game_board.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o -c /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_game_board.cc
 
-CMakeFiles/checkers-game-test.dir/tests/test_main.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers-game-test.dir/tests/test_main.cc.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_main.cc > CMakeFiles/checkers-game-test.dir/tests/test_main.cc.i
+CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_game_board.cc > CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.i
 
-CMakeFiles/checkers-game-test.dir/tests/test_main.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers-game-test.dir/tests/test_main.cc.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_main.cc -o CMakeFiles/checkers-game-test.dir/tests/test_main.cc.s
+CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/tests/test_game_board.cc -o CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.s
 
 CMakeFiles/checkers-game-test.dir/src/player.cc.o: CMakeFiles/checkers-game-test.dir/flags.make
 CMakeFiles/checkers-game-test.dir/src/player.cc.o: ../src/player.cc
@@ -172,32 +172,47 @@ CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/checkers_app.cc -o CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.s
 
+CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o: CMakeFiles/checkers-game-test.dir/flags.make
+CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o: ../src/game_engine.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o -c /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_engine.cc
+
+CMakeFiles/checkers-game-test.dir/src/game_engine.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/checkers-game-test.dir/src/game_engine.cc.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_engine.cc > CMakeFiles/checkers-game-test.dir/src/game_engine.cc.i
+
+CMakeFiles/checkers-game-test.dir/src/game_engine.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/checkers-game-test.dir/src/game_engine.cc.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/src/game_engine.cc -o CMakeFiles/checkers-game-test.dir/src/game_engine.cc.s
+
 # Object files for target checkers-game-test
 checkers__game__test_OBJECTS = \
-"CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o" \
+"CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o" \
 "CMakeFiles/checkers-game-test.dir/src/player.cc.o" \
 "CMakeFiles/checkers-game-test.dir/src/game_board.cc.o" \
 "CMakeFiles/checkers-game-test.dir/src/game_piece.cc.o" \
 "CMakeFiles/checkers-game-test.dir/src/square.cc.o" \
 "CMakeFiles/checkers-game-test.dir/src/sketchpad.cc.o" \
-"CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.o"
+"CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.o" \
+"CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o"
 
 # External object files for target checkers-game-test
 checkers__game__test_EXTERNAL_OBJECTS =
 
-Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/tests/test_main.cc.o
+Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/tests/test_game_board.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/player.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/game_board.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/game_piece.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/square.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/sketchpad.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/checkers_app.cc.o
+Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/build.make
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: /Users/jathinnama/Documents/Cinder/lib/macosx/Debug/libcinder.a
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: /Users/jathinnama/Documents/Cinder/lib/macosx/libboost_system.a
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: /Users/jathinnama/Documents/Cinder/lib/macosx/libboost_filesystem.a
 Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test: CMakeFiles/checkers-game-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/jathinnama/Documents/Cinder/my-projects/final-project-jathinnm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Debug/checkers-game-test/checkers-game-test.app/Contents/MacOS/checkers-game-test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/checkers-game-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
