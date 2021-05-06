@@ -2617,8 +2617,6 @@ CMakeFiles/checkers-game.dir/src/game_board.cc.o: /Users/jathinnama/Documents/Ci
 CMakeFiles/checkers-game.dir/src/game_board.cc.o: /Users/jathinnama/Documents/Cinder/include/glm/vector_relational.hpp
 CMakeFiles/checkers-game.dir/src/game_board.cc.o: ../src/game_board.cc
 
-CMakeFiles/checkers-game.dir/src/game_engine.cc.o: ../src/game_engine.cc
-
 CMakeFiles/checkers-game.dir/src/game_piece.cc.o: ../include/game_piece.h
 CMakeFiles/checkers-game.dir/src/game_piece.cc.o: /Users/jathinnama/Documents/Cinder/include/boost/assert.hpp
 CMakeFiles/checkers-game.dir/src/game_piece.cc.o: /Users/jathinnama/Documents/Cinder/include/boost/cerrno.hpp
