@@ -55,13 +55,12 @@ list(APPEND SOURCE_FILES
         src/game_piece.cc
         src/square.cc
         src/sketchpad.cc
-        src/checkers_app.cc
-        src/game_engine.cc)
+        src/checkers_app.cc)
 
 list(APPEND TEST_FILES)
 
-add_executable(checkers-app apps/checkers_app_main.cc ${CORE_SOURCE_FILES})
-target_include_directories(checkers-app PRIVATE include)
+#add_executable(checkers-app apps/checkers_app_main.cc ${CORE_SOURCE_FILES})
+#target_include_directories(checkers-app PRIVATE include)
 ci_make_app(
         APP_NAME        checkers-game
         CINDER_PATH     ${CINDER_PATH}

@@ -10,23 +10,36 @@ namespace checkers {
 
 class GamePiece {
 public:
+  /**
+   * Initialize game piece and bool values
+   */
   GamePiece();
+
   bool GetIsRedColor() const;
+
   bool GetIsPieceKing() const;
-  bool GetCanJumpAgain() const;
-  const vector<vec2> GetPossibleMoves() const;
-  void SetColor(string set_color);
-  void SetIsPieceRed(bool set_is_piece_red_);
-  void SetCurrentPosition(vec2 &set_position);
-  void UpdatePossibleMoves(vec2 &possible_position);
-  void ClearPossibleMoves();
-  void SetIsPieceKing();
-  void SetCanJumpAgain();
+
   vec2 GetCurrentPosition() const;
 
+  const vector<vec2> GetPossibleMoves() const;
+
+  void SetIsPieceRed(bool set_is_piece_red_);
+
+  void SetCurrentPosition(vec2 &set_position);
+
+  /**
+   * Add possible move to list
+   */
+  void UpdatePossibleMoves(vec2 &possible_position);
+
+  /**
+   * Empty possible moves list
+   */
+  void ClearPossibleMoves();
+
+  void SetIsPieceKing();
+
 private:
-  string color_;
-  bool can_jump_again_;
   bool is_piece_red_;
   bool is_piece_king_;
   vec2 current_pos_;

@@ -5,7 +5,6 @@ namespace checkers {
 GameBoard::GameBoard() {
   is_player_one_turn_ = true;
   is_piece_selected_ = false;
-  can_jump_again_ = false;
   player_one_.SetIsPlayerOne(true);
   player_two_.SetIsPlayerOne(false);
   Square square;
@@ -15,10 +14,10 @@ GameBoard::GameBoard() {
     for (size_t col = 1; col <= kBoardSize; col++) {
       squares_[row - 1][col - 1].SetLocation(row - 1, col - 1);
       squares_[row - 1][col - 1].SetContainsGamePiece(false);
-      squares_[row - 1][col - 1].SetSquareColor("white");
+      squares_[row - 1][col - 1].SetSquareColor(kAltSquareColor);
       if (row < 4) {
         if (row % 2 != 0 && col % 2 != 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
           GamePiece piece;
           vec2 pos = {row - 1, col - 1};
           piece.SetCurrentPosition(pos);
@@ -26,7 +25,7 @@ GameBoard::GameBoard() {
           squares_[row - 1][col - 1].SetGamePiece(piece);
           squares_[row - 1][col - 1].SetContainsGamePiece(true);
         } else if (row % 2 == 0 && col % 2 == 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
           GamePiece piece;
           vec2 pos = {row - 1, col - 1};
           piece.SetCurrentPosition(pos);
@@ -36,7 +35,7 @@ GameBoard::GameBoard() {
         }
       } else if (row > 5) {
         if (row % 2 != 0 && col % 2 != 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
           GamePiece piece;
           vec2 pos = {row - 1, col - 1};
           piece.SetCurrentPosition(pos);
@@ -44,7 +43,7 @@ GameBoard::GameBoard() {
           squares_[row - 1][col - 1].SetGamePiece(piece);
           squares_[row - 1][col - 1].SetContainsGamePiece(true);
         } else if (row % 2 == 0 && col % 2 == 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
           GamePiece piece;
           vec2 pos = {row - 1, col - 1};
           piece.SetCurrentPosition(pos);
@@ -54,24 +53,13 @@ GameBoard::GameBoard() {
         }
       } else {
         if (row % 2 != 0 && col % 2 != 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
         } else if (row % 2 == 0 && col % 2 == 0) {
-          squares_[row - 1][col - 1].SetSquareColor("black");
+          squares_[row - 1][col - 1].SetSquareColor(kPieceSquareColor);
         }
       }
     }
   }
-}
-
-GameBoard::GameBoard(size_t board_size) {
-  is_player_one_turn_ = true;
-  is_piece_selected_ = false;
-  can_jump_again_ = false;
-  player_one_.SetIsPlayerOne(true);
-  player_two_.SetIsPlayerOne(false);
-  Square square;
-  squares_ =
-      vector<vector<Square>>(board_size, vector<Square>(board_size, square));
 }
 
 void checkers::GameBoard::SelectNextMove(Square &square) {
@@ -136,9 +124,8 @@ void checkers::GameBoard::MoveToSquare(Square &square) {
 void GameBoard::UpdateRedDiagonalPos(Square &square) {
   vec2 location = square.GetLocation();
   if (location.x != kBoardSize - 1 && location.y != kBoardSize - 1) {
-    if (!(squares_[location.x + kRightUpMove.x][location.y + kRightUpMove.y]
-              .GetContainsGamePiece())) {
-      vec2 move = {location.x + kRightUpMove.x, location.y + kRightUpMove.y};
+    if (!(squares_[location.x + 1][location.y + 1].GetContainsGamePiece())) {
+      vec2 move = {location.x + 1, location.y + 1};
       selected_piece_.UpdateGamePieceMoves(move);
     }
   }
@@ -147,7 +134,6 @@ void GameBoard::UpdateRedDiagonalPos(Square &square) {
     if (!(squares_[location.x + 1][location.y - 1].GetContainsGamePiece())) {
       vec2 move = {location.x + 1, location.y - 1};
       selected_piece_.UpdateGamePieceMoves(move);
-      std::cout << selected_piece_.GetPiecePossibleMoves().size();
     }
   }
 }
@@ -156,7 +142,7 @@ void GameBoard::UpdateWhiteDiagPos(Square &square) {
   vec2 location = square.GetLocation();
   if (location.x != 0 && location.y != kBoardSize - 1) {
     if (!(squares_[location.x - 1][location.y + 1].GetContainsGamePiece())) {
-      vec2 move = {location.x - kRightUpMove.x, location.y + kRightUpMove.y};
+      vec2 move = {location.x - 1, location.y + 1};
       selected_piece_.UpdateGamePieceMoves(move);
     }
   }
@@ -249,12 +235,10 @@ void GameBoard::CheckTakePiece(Square &square) {
       square.GetLocation().y - selected_piece_.GetLocation().y == 2) {
     vec2 increment = {-1, -1};
     TakePiece(square, increment);
-    std::cout << player_one_.GetCollectedPieces().size();
   } else if (square.GetLocation().x - selected_piece_.GetLocation().x == 2 &&
              square.GetLocation().y - selected_piece_.GetLocation().y == -2) {
     vec2 increment = {-1, 1};
     TakePiece(square, increment);
-    std::cout << player_one_.GetCollectedPieces().size();
   } else if (square.GetLocation().x - selected_piece_.GetLocation().x == -2 &&
              square.GetLocation().y - selected_piece_.GetLocation().y == 2) {
     vec2 increment = {1, -1};
@@ -265,27 +249,6 @@ void GameBoard::CheckTakePiece(Square &square) {
     TakePiece(square, increment);
   }
 }
-// void GameBoard::CheckTakeDoublePiece(Square &square) {
-//  if (square.GetLocation().x - selected_piece_.GetLocation().x == 4 &&
-//  square.GetLocation().y - selected_piece_.GetLocation().y == 0) {
-//    vec2 increment = {-1, -1};
-//    TakePiece(square, increment);
-//    std::cout << player_one_.GetCollectedPieces().size();
-//  } else if (square.GetLocation().x - selected_piece_.GetLocation().x == 4 &&
-//  square.GetLocation().y - selected_piece_.GetLocation().y == 4) {
-//    vec2 increment = {-1, 1};
-//    TakePiece(square, increment);
-//    std::cout << player_one_.GetCollectedPieces().size();
-//  } else if (square.GetLocation().x - selected_piece_.GetLocation().x == -4 &&
-//  square.GetLocation().y - selected_piece_.GetLocation().y == 0) {
-//    vec2 increment = {1, -1};
-//    TakePiece(square, increment);
-//  } else if (square.GetLocation().x - selected_piece_.GetLocation().x == -4 &&
-//  square.GetLocation().y - selected_piece_.GetLocation().y == 4) {
-//    vec2 increment = {1, 1};
-//    TakePiece(square, increment);
-//  }
-//}
 
 void GameBoard::TakePiece(Square &square, vec2 &increment) {
   Square blank_square;
@@ -309,7 +272,6 @@ void GameBoard::TakePiece(Square &square, vec2 &increment) {
   }
   squares_[square.GetLocation().x + increment.x]
           [square.GetLocation().y + increment.y] = blank_square;
-  selected_piece_.ToggleCanJumpAgain();
   is_player_one_turn_ = !is_player_one_turn_;
 }
 

@@ -144,19 +144,6 @@ checkers-game/fast:
 .PHONY : checkers-game/fast
 
 #=============================================================================
-# Target rules for targets named checkers-app
-
-# Build rule for target.
-checkers-app: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 checkers-app
-.PHONY : checkers-app
-
-# fast build rule for target.
-checkers-app/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-app.dir/build.make CMakeFiles/checkers-app.dir/build
-.PHONY : checkers-app/fast
-
-#=============================================================================
 # Target rules for targets named checkers-game-test
 
 # Build rule for target.
@@ -168,33 +155,6 @@ checkers-game-test: cmake_check_build_system
 checkers-game-test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game-test.dir/build.make CMakeFiles/checkers-game-test.dir/build
 .PHONY : checkers-game-test/fast
-
-apps/checkers_app_main.o: apps/checkers_app_main.cc.o
-
-.PHONY : apps/checkers_app_main.o
-
-# target to build an object file
-apps/checkers_app_main.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-app.dir/build.make CMakeFiles/checkers-app.dir/apps/checkers_app_main.cc.o
-.PHONY : apps/checkers_app_main.cc.o
-
-apps/checkers_app_main.i: apps/checkers_app_main.cc.i
-
-.PHONY : apps/checkers_app_main.i
-
-# target to preprocess a source file
-apps/checkers_app_main.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-app.dir/build.make CMakeFiles/checkers-app.dir/apps/checkers_app_main.cc.i
-.PHONY : apps/checkers_app_main.cc.i
-
-apps/checkers_app_main.s: apps/checkers_app_main.cc.s
-
-.PHONY : apps/checkers_app_main.s
-
-# target to generate assembly for a file
-apps/checkers_app_main.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-app.dir/build.make CMakeFiles/checkers-app.dir/apps/checkers_app_main.cc.s
-.PHONY : apps/checkers_app_main.cc.s
 
 apps/cinder_app_main.o: apps/cinder_app_main.cc.o
 
@@ -282,36 +242,6 @@ src/game_board.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game.dir/build.make CMakeFiles/checkers-game.dir/src/game_board.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game-test.dir/build.make CMakeFiles/checkers-game-test.dir/src/game_board.cc.s
 .PHONY : src/game_board.cc.s
-
-src/game_engine.o: src/game_engine.cc.o
-
-.PHONY : src/game_engine.o
-
-# target to build an object file
-src/game_engine.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game.dir/build.make CMakeFiles/checkers-game.dir/src/game_engine.cc.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game-test.dir/build.make CMakeFiles/checkers-game-test.dir/src/game_engine.cc.o
-.PHONY : src/game_engine.cc.o
-
-src/game_engine.i: src/game_engine.cc.i
-
-.PHONY : src/game_engine.i
-
-# target to preprocess a source file
-src/game_engine.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game.dir/build.make CMakeFiles/checkers-game.dir/src/game_engine.cc.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game-test.dir/build.make CMakeFiles/checkers-game-test.dir/src/game_engine.cc.i
-.PHONY : src/game_engine.cc.i
-
-src/game_engine.s: src/game_engine.cc.s
-
-.PHONY : src/game_engine.s
-
-# target to generate assembly for a file
-src/game_engine.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game.dir/build.make CMakeFiles/checkers-game.dir/src/game_engine.cc.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/checkers-game-test.dir/build.make CMakeFiles/checkers-game-test.dir/src/game_engine.cc.s
-.PHONY : src/game_engine.cc.s
 
 src/game_piece.o: src/game_piece.cc.o
 
@@ -468,12 +398,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... checkers-app"
 	@echo "... checkers-game"
 	@echo "... checkers-game-test"
-	@echo "... apps/checkers_app_main.o"
-	@echo "... apps/checkers_app_main.i"
-	@echo "... apps/checkers_app_main.s"
 	@echo "... apps/cinder_app_main.o"
 	@echo "... apps/cinder_app_main.i"
 	@echo "... apps/cinder_app_main.s"
@@ -483,9 +409,6 @@ help:
 	@echo "... src/game_board.o"
 	@echo "... src/game_board.i"
 	@echo "... src/game_board.s"
-	@echo "... src/game_engine.o"
-	@echo "... src/game_engine.i"
-	@echo "... src/game_engine.s"
 	@echo "... src/game_piece.o"
 	@echo "... src/game_piece.i"
 	@echo "... src/game_piece.s"

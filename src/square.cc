@@ -51,8 +51,6 @@ void Square::SetPieceLocation(vec2 &location) {
 void Square::ClearPossibleMoves() { piece_.ClearPossibleMoves(); }
 void Square::SetIsPieceKing() { piece_.SetIsPieceKing(); }
 
-void Square::ToggleCanJumpAgain() { piece_.SetCanJumpAgain(); }
-
 vec2 Square::GetPieceCurrentPos() const { return piece_.GetCurrentPosition(); }
 
 } // namespace checkers

@@ -1,11 +1,6 @@
 #include <game_piece.h>
 
-checkers::GamePiece::GamePiece() {
-  is_piece_king_ = false;
-  can_jump_again_ = false;
-}
-
-void checkers::GamePiece::SetColor(string set_color) { color_ = set_color; }
+checkers::GamePiece::GamePiece() { is_piece_king_ = false; }
 
 void checkers::GamePiece::SetCurrentPosition(vec2 &set_position) {
   current_pos_.x = set_position.x;
@@ -31,11 +26,5 @@ void checkers::GamePiece::ClearPossibleMoves() { possible_moves_.clear(); }
 void checkers::GamePiece::SetIsPieceKing() { is_piece_king_ = true; }
 
 bool checkers::GamePiece::GetIsPieceKing() const { return is_piece_king_; }
-
-bool checkers::GamePiece::GetCanJumpAgain() const { return can_jump_again_; }
-
-void checkers::GamePiece::SetCanJumpAgain() {
-  can_jump_again_ = !can_jump_again_;
-}
 
 vec2 checkers::GamePiece::GetCurrentPosition() const { return current_pos_; }

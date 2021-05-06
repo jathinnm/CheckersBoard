@@ -18,11 +18,11 @@ void CheckersApp::draw() {
 
   ci::gl::color(0, 0, 0);
   ci::gl::drawSolidRect(ci::Rectf(0, 0, kWindowSize, kHeaderHeight));
-  ci::gl::drawStringCentered("Welcome to Checkers",
-                             glm::vec2(kWindowSize / 2, kMargin / 2.5),
+  ci::gl::drawStringCentered(kTitle, glm::vec2(kWindowSize / 2, kMargin / 2.5),
                              ci::Color("white"), ci::Font("Arial", 40.0f));
   ci::gl::drawStringCentered(
-      "P1 Score:", glm::vec2(kWindowSize - (kWindowSize - 100), kMargin / 2.5),
+      kP1ScoreLabel,
+      glm::vec2(kWindowSize - (kWindowSize - 100), kMargin / 2.5),
       ci::Color("white"), ci::Font("Arial", 40.0f));
 
   ci::gl::drawStringCentered(
@@ -30,9 +30,9 @@ void CheckersApp::draw() {
       glm::vec2(kWindowSize - (kWindowSize - 210), kMargin / 2.5),
       ci::Color("white"), ci::Font("Arial", 40.0f));
 
-  ci::gl::drawStringCentered(
-      "P2 Score:", glm::vec2(kWindowSize / 1.15, kMargin / 2.5),
-      ci::Color("white"), ci::Font("Arial", 40.0f));
+  ci::gl::drawStringCentered(kP2ScoreLabel,
+                             glm::vec2(kWindowSize / 1.15, kMargin / 2.5),
+                             ci::Color("white"), ci::Font("Arial", 40.0f));
 
   ci::gl::drawStringCentered(
       std::to_string(game_board_.GetPlayerTwo().GetCollectedPieces().size()),
@@ -40,11 +40,11 @@ void CheckersApp::draw() {
       ci::Font("Arial", 40.0f));
   if (game_board_.GetPlayerTurn()) {
     ci::gl::drawStringCentered(
-        "Red's Turn", glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
+        kRedTurnLabel, glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
         ci::Color("Red"), ci::Font("Arial", 50.0f));
   } else {
     ci::gl::drawStringCentered(
-        "White's Turn", glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
+        kWhiteTurnLabel, glm::vec2(kWindowSize / 2, kWindowSize - kMargin / 2),
         ci::Color("White"), ci::Font("Arial", 50.0f));
   }
 }
@@ -68,6 +68,5 @@ void CheckersApp::mouseDown(ci::app::MouseEvent event) {
     }
   }
 }
-//}
 } // namespace visualizer
 } // namespace checkers
