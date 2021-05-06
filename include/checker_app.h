@@ -12,8 +12,15 @@ class CheckersApp : public ci::app::App {
 
 public:
   CheckersApp();
-
+  /**
+   * Draw whole window including background, header, and game board
+   */
   void draw() override;
+
+  /**
+   * Handles players clicks on board to select
+   * @param event
+   */
   void mouseDown(ci::app::MouseEvent event) override;
 
   const double kWindowSize = 1000;
@@ -26,5 +33,4 @@ private:
   GameBoard game_board_;
 };
 } // namespace visualizer
-
 } // namespace checkers

@@ -5,38 +5,41 @@
 TEST_CASE("Test red piece movement diagonally") {
   checkers::GameBoard game_board;
   SECTION("Test possible moves updated") {
-    checkers::Square& square = game_board.GetGameBoard()[2][2];
+    checkers::Square &square = game_board.GetGameBoard()[2][2];
     game_board.SelectNextMove(square);
     vec2 move_one = {3, 3};
     vec2 move_two = {3, 1};
-    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] == move_one);
-    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] == move_two);
+    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] ==
+            move_one);
+    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] ==
+            move_two);
   }
-  
+
   SECTION("Test square updated with piece") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][1];
-    
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][1];
+
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
     vec2 new_location = {3, 1};
 
     REQUIRE(game_board.GetGameBoard()[3][1].GetContainsGamePiece());
     REQUIRE(game_board.GetGameBoard()[3][1].GetPieceIsRedColor());
-    REQUIRE(game_board.GetGameBoard()[3][1].GetPieceCurrentPos() == new_location);
+    REQUIRE(game_board.GetGameBoard()[3][1].GetPieceCurrentPos() ==
+            new_location);
   }
-  
+
   SECTION("Test previous square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][1];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][1];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
     REQUIRE(!game_board.GetGameBoard()[2][2].GetContainsGamePiece());
   }
   SECTION("Test turn changes") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][1];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][1];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -46,22 +49,24 @@ TEST_CASE("Test red piece movement diagonally") {
 
 TEST_CASE("Test white piece movement diagonally") {
   checkers::GameBoard game_board;
-  checkers::Square& select_first_square = game_board.GetGameBoard()[2][2];
-  checkers::Square& move_red_square = game_board.GetGameBoard()[3][1];
+  checkers::Square &select_first_square = game_board.GetGameBoard()[2][2];
+  checkers::Square &move_red_square = game_board.GetGameBoard()[3][1];
   game_board.SelectNextMove(select_first_square);
   game_board.SelectNextMove(move_red_square);
   SECTION("Test possible moves updated") {
-    checkers::Square& square = game_board.GetGameBoard()[5][1];
+    checkers::Square &square = game_board.GetGameBoard()[5][1];
     game_board.SelectNextMove(square);
     vec2 move_one = {4, 2};
     vec2 move_two = {4, 0};
-    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] == move_one);
-    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] == move_two);
+    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] ==
+            move_one);
+    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] ==
+            move_two);
   }
 
   SECTION("Test square updated with piece") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][2];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][2];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -69,12 +74,13 @@ TEST_CASE("Test white piece movement diagonally") {
 
     REQUIRE(game_board.GetGameBoard()[4][2].GetContainsGamePiece());
     REQUIRE(!game_board.GetGameBoard()[4][2].GetPieceIsRedColor());
-    REQUIRE(game_board.GetGameBoard()[4][2].GetPieceCurrentPos() == new_location);
+    REQUIRE(game_board.GetGameBoard()[4][2].GetPieceCurrentPos() ==
+            new_location);
   }
 
   SECTION("Test previous square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][2];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][2];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -82,8 +88,8 @@ TEST_CASE("Test white piece movement diagonally") {
   }
 
   SECTION("Test previous square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][2];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][2];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -103,17 +109,18 @@ TEST_CASE("Test red piece can jump a piece") {
   new_square.SetContainsGamePiece(true);
   game_board.GetGameBoard()[3][3] = new_square;
   SECTION("Test possible moves updated") {
-    checkers::Square& square = game_board.GetGameBoard()[2][2];
+    checkers::Square &square = game_board.GetGameBoard()[2][2];
     game_board.SelectNextMove(square);
     vec2 move_one = {3, 3};
     vec2 move_two = {3, 1};
     vec2 move_three = {4, 4};
-    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] == move_three);
+    REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] ==
+            move_three);
   }
 
   SECTION("Test square updated with piece") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][4];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][4];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -121,40 +128,41 @@ TEST_CASE("Test red piece can jump a piece") {
 
     REQUIRE(game_board.GetGameBoard()[4][4].GetContainsGamePiece());
     REQUIRE(game_board.GetGameBoard()[4][4].GetPieceIsRedColor());
-    REQUIRE(game_board.GetGameBoard()[4][4].GetPieceCurrentPos() == new_location);
+    REQUIRE(game_board.GetGameBoard()[4][4].GetPieceCurrentPos() ==
+            new_location);
   }
 
   SECTION("Test previous square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][4];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][4];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
     REQUIRE(!game_board.GetGameBoard()[2][2].GetContainsGamePiece());
   }
-  
+
   SECTION("Test taken piece square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][4];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][4];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
     REQUIRE(!game_board.GetGameBoard()[3][3].GetContainsGamePiece());
   }
-  
+
   SECTION("Test piece is taken") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][4];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][4];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
 
     REQUIRE(game_board.GetPlayerOne().GetCollectedPieces().size() == 1);
   }
-  
+
   SECTION("Test turn does not change") {
-    checkers::Square& select_square = game_board.GetGameBoard()[2][2];
-    checkers::Square& move_square = game_board.GetGameBoard()[4][4];
+    checkers::Square &select_square = game_board.GetGameBoard()[2][2];
+    checkers::Square &move_square = game_board.GetGameBoard()[4][4];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -174,20 +182,20 @@ TEST_CASE("Test white piece can jump a piece") {
   new_square.SetContainsGamePiece(true);
   new_square.SetGamePiece(piece);
   game_board.GetGameBoard()[4][2] = new_square;
-  checkers::Square& select_first_square = game_board.GetGameBoard()[2][2];
-  checkers::Square& move_red_square = game_board.GetGameBoard()[3][1];
+  checkers::Square &select_first_square = game_board.GetGameBoard()[2][2];
+  checkers::Square &move_red_square = game_board.GetGameBoard()[3][1];
   game_board.SelectNextMove(select_first_square);
   game_board.SelectNextMove(move_red_square);
   SECTION("Test possible moves updated") {
-    checkers::Square& square = game_board.GetGameBoard()[5][1];
+    checkers::Square &square = game_board.GetGameBoard()[5][1];
     game_board.SelectNextMove(square);
     vec2 move = {3, 3};
     REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[1] == move);
   }
 
   SECTION("Test square updated with piece") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][3];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][3];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -195,12 +203,13 @@ TEST_CASE("Test white piece can jump a piece") {
 
     REQUIRE(game_board.GetGameBoard()[3][3].GetContainsGamePiece());
     REQUIRE(!game_board.GetGameBoard()[3][3].GetPieceIsRedColor());
-    REQUIRE(game_board.GetGameBoard()[3][3].GetPieceCurrentPos() == new_location);
+    REQUIRE(game_board.GetGameBoard()[3][3].GetPieceCurrentPos() ==
+            new_location);
   }
 
   SECTION("Test previous square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][3];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][3];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -208,8 +217,8 @@ TEST_CASE("Test white piece can jump a piece") {
   }
 
   SECTION("Test taken piece square is cleared") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][3];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][3];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -217,8 +226,8 @@ TEST_CASE("Test white piece can jump a piece") {
   }
 
   SECTION("Test piece is taken") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][3];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][3];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -226,8 +235,8 @@ TEST_CASE("Test white piece can jump a piece") {
     REQUIRE(game_board.GetPlayerTwo().GetCollectedPieces().size() == 1);
   }
   SECTION("Test turn does not change") {
-    checkers::Square& select_square = game_board.GetGameBoard()[5][1];
-    checkers::Square& move_square = game_board.GetGameBoard()[3][3];
+    checkers::Square &select_square = game_board.GetGameBoard()[5][1];
+    checkers::Square &move_square = game_board.GetGameBoard()[3][3];
 
     game_board.SelectNextMove(select_square);
     game_board.SelectNextMove(move_square);
@@ -282,18 +291,19 @@ TEST_CASE("Test can king red piece") {
   checkers::Square &move_white_square = game_board.GetGameBoard()[4][2];
   game_board.SelectNextMove(select_second_square);
   game_board.SelectNextMove(move_white_square);
-  
+
   SECTION("Test piece is king") {
-    checkers::Square& select_square = game_board.GetGameBoard()[7][1];
+    checkers::Square &select_square = game_board.GetGameBoard()[7][1];
     game_board.SelectNextMove(select_square);
-    
+
     REQUIRE(game_board.GetSelectedPiece().GetGamePiece().GetIsPieceKing());
   }
   SECTION("Test king piece possible moves") {
     checkers::Square &select_square = game_board.GetGameBoard()[7][1];
     game_board.SelectNextMove(select_square);
 
-    vec2 move = {6, 2};;
+    vec2 move = {6, 2};
+    ;
 
     REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] == move);
   }
@@ -322,17 +332,18 @@ TEST_CASE("Test can king white piece") {
   game_board.SelectNextMove(move_white_square);
 
   SECTION("Test piece is king") {
-    checkers::Square& select_square = game_board.GetGameBoard()[0][2];
+    checkers::Square &select_square = game_board.GetGameBoard()[0][2];
     game_board.SelectNextMove(select_square);
 
     REQUIRE(!game_board.GetSelectedPiece().GetGamePiece().GetIsPieceKing());
   }
-  
+
   SECTION("Test king piece possible moves") {
     checkers::Square &select_square = game_board.GetGameBoard()[0][2];
     game_board.SelectNextMove(select_square);
 
-    vec2 move = {0, 2};;
+    vec2 move = {0, 2};
+    ;
 
     REQUIRE(game_board.GetSelectedPiece().GetPiecePossibleMoves()[0] == move);
   }
