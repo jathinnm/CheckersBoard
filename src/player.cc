@@ -7,3 +7,6 @@ void checkers::Player::UpdateCollectedPieces(GamePiece game_piece) {
 vector<checkers::GamePiece> checkers::Player::GetCollectedPieces() {
   return collected_pieces_;
 }
+void checkers::Player::SetIsPlayerOne(bool set_is_player_one) {
+  is_player_one_ = set_is_player_one;
+}
